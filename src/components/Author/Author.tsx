@@ -113,64 +113,81 @@ const ONavbar = styled.div`
   justify-content: flex-start;
   padding: 2rem 21.88rem;
 `;
-const PageTitle = styled.div`
+const ImageIcon = styled.img`
   position: relative;
-  line-height: 2.25rem;
-  font-weight: 600;
+  border-radius: 80px;
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
 `;
-const Home1 = styled.div`
+const JonathanDoe = styled.div`
   position: relative;
-  line-height: 1.5rem;
-  color: #3b3c4a;
+  line-height: 1.75rem;
+  font-weight: 500;
 `;
-const Divider = styled.div`
+const CollaboratorEditor = styled.div`
   position: relative;
-  border-right: 1px solid #e8e8ea;
-  box-sizing: border-box;
-  width: 0.06rem;
-  height: 1.06rem;
-`;
-const LinkOne = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.75rem;
-`;
-const LinkTwo = styled.div`
-  display: none;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.75rem;
-`;
-const ABreadcrumb = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.75rem;
-  font-size: 1rem;
+  font-size: 0.88rem;
+  line-height: 1.25rem;
   color: #696a75;
 `;
+const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+`;
+const AAuthor = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+`;
+const Para = styled.div`
+  align-self: stretch;
+  position: relative;
+  font-size: 1.13rem;
+  line-height: 1.63rem;
+  color: #3b3c4a;
+  text-align: center;
+`;
+const AButton = styled.div`
+  border-radius: 6px;
+  background-color: #696a75;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+`;
+const SocialMedia = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+`;
 const Content = styled.div`
+  width: 41.75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 0.5rem;
+  gap: 1.5rem;
 `;
-const OPageInfo = styled.div`
-  background-color: #fff;
+const OAuthorInfo = styled.div`
+  border-radius: 12px;
+  background-color: #f6f6f7;
   width: 76rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem 0rem;
+  padding: 3rem;
   box-sizing: border-box;
-  text-align: center;
-  font-size: 1.88rem;
+  font-size: 1.25rem;
   color: #181a2a;
 `;
 const Header = styled.div`
@@ -179,83 +196,18 @@ const Header = styled.div`
   align-items: center;
   justify-content: flex-start;
   gap: 1.5rem;
-  font-size: 1rem;
 `;
-const Text1 = styled.div`
+const Title = styled.b`
+  flex: 1;
   position: relative;
-  line-height: 1.25rem;
-  font-weight: 500;
-`;
-const ABadge = styled.div`
-  border-radius: 6px;
-  background-color: #4b6bfb;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 0.25rem 0.63rem;
-`;
-const Title = styled.div`
-  position: relative;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-  font-weight: 600;
-  display: inline-block;
-  width: 45rem;
+  line-height: 1.75rem;
 `;
 const Heading = styled.div`
   align-self: stretch;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 1rem;
-`;
-const ImageIcon = styled.img`
-  position: relative;
-  border-radius: 28px;
-  width: 2.25rem;
-  height: 2.25rem;
-  object-fit: cover;
-`;
-const Author = styled.div`
-  position: relative;
-  line-height: 1.5rem;
-  font-weight: 500;
-`;
-const ShortInfo = styled.div`
-  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 1.25rem;
-  font-size: 1rem;
-`;
-const Content1 = styled.div`
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 1.5rem;
-`;
-const MPostCardOverlay = styled.div`
-  border-radius: 12px;
-  width: 76rem;
-  height: 28.13rem;
-  overflow: hidden;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 2.5rem;
-  box-sizing: border-box;
-  background-image: url("/mpostcardoverlay@3x.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-  color: #fff;
 `;
 const MPostCardGridChild = styled.img`
   position: relative;
@@ -264,7 +216,12 @@ const MPostCardGridChild = styled.img`
   height: 15rem;
   object-fit: cover;
 `;
-const ABadge1 = styled.div`
+const Text1 = styled.div`
+  position: relative;
+  line-height: 1.25rem;
+  font-weight: 500;
+`;
+const ABadge = styled.div`
   border-radius: 6px;
   background-color: rgba(75, 107, 251, 0.05);
   display: flex;
@@ -281,7 +238,34 @@ const Title1 = styled.div`
   font-weight: 600;
   color: #181a2a;
 `;
-const ShortInfo1 = styled.div`
+const Heading1 = styled.div`
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+`;
+const ImageIcon1 = styled.img`
+  position: relative;
+  border-radius: 28px;
+  width: 2.25rem;
+  height: 2.25rem;
+  object-fit: cover;
+`;
+const Author = styled.div`
+  position: relative;
+  line-height: 1.5rem;
+  font-weight: 500;
+`;
+const AAuthor1 = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+`;
+const ShortInfo = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -290,7 +274,7 @@ const ShortInfo1 = styled.div`
   font-size: 1rem;
   color: #97989f;
 `;
-const Content2 = styled.div`
+const Content1 = styled.div`
   align-self: stretch;
   display: flex;
   flex-direction: column;
@@ -321,33 +305,14 @@ const Row = styled.div`
   justify-content: flex-start;
   gap: 1.25rem;
 `;
-const Content3 = styled.div`
+const Content2 = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 1.25rem;
-`;
-const AddIcon = styled.img`
-  position: relative;
-  width: 1.25rem;
-  height: 1.25rem;
-  overflow: hidden;
-  flex-shrink: 0;
-  display: none;
-`;
-const AButton = styled.div`
-  border-radius: 6px;
-  border: 1px solid rgba(105, 106, 117, 0.3);
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.25rem;
-  gap: 0.75rem;
-  font-size: 1rem;
-  color: #696a75;
+  font-size: 0.88rem;
+  color: #4b6bfb;
 `;
 const OPostLayout = styled.div`
   display: flex;
@@ -355,39 +320,15 @@ const OPostLayout = styled.div`
   align-items: center;
   justify-content: flex-start;
   gap: 2rem;
+  font-size: 1.5rem;
+  color: #181a2a;
 `;
-const Advertisement = styled.div`
-  position: relative;
-  line-height: 1.25rem;
-`;
-const YouCanPlace = styled.div`
-  position: relative;
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-  font-weight: 600;
-`;
-const X = styled.div`
-  position: relative;
-  font-size: 1.13rem;
-  line-height: 1.63rem;
-`;
-const Info = styled.div`
+const Content3 = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-`;
-const OAdsSpace = styled.div`
-  border-radius: 12px;
-  background-color: #e8e8ea;
-  width: 46.88rem;
-  height: 6.25rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #696a75;
+  gap: 3rem;
 `;
 const About = styled.div`
   position: relative;
@@ -466,10 +407,25 @@ const GetBlogArticles = styled.div`
   line-height: 1.5rem;
   color: #696a75;
 `;
+const Heading2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+`;
 const Label = styled.div`
   position: relative;
   line-height: 1.25rem;
   font-weight: 500;
+  display: none;
+`;
+const MailIcon = styled.img`
+  position: relative;
+  width: 1.25rem;
+  height: 1.25rem;
+  overflow: hidden;
+  flex-shrink: 0;
   display: none;
 `;
 const Placeholder1 = styled.div`
@@ -477,7 +433,7 @@ const Placeholder1 = styled.div`
   position: relative;
   line-height: 1.5rem;
 `;
-const MailIcon = styled.img`
+const MailIcon1 = styled.img`
   position: relative;
   width: 1.25rem;
   height: 1.25rem;
@@ -588,7 +544,7 @@ const CopyrightInfo = styled.div`
   justify-content: flex-start;
   gap: 0.63rem;
 `;
-const Divider1 = styled.div`
+const Divider = styled.div`
   position: relative;
   border-right: 1px solid #e8e8ea;
   box-sizing: border-box;
@@ -632,428 +588,403 @@ const OFooter = styled.div`
   font-family: "Plus Jakarta Sans";
 `;
 const Content4 = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 5rem;
-  color: #4b6bfb;
-`;
-const Content5 = styled.div`
   position: absolute;
   top: 0rem;
   left: 0rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
-  gap: 3rem;
+  gap: 6.25rem;
 `;
-const BlogListingRoot = styled.div`
+const AuthorPageRoot = styled.div`
   position: relative;
   background-color: #fff;
   width: 100%;
-  height: 194.63rem;
+  height: 167.5rem;
   overflow: hidden;
   text-align: left;
-  font-size: 0.88rem;
+  font-size: 1rem;
   color: #3b3c4a;
   font-family: "Work Sans";
 `;
 
-const BlogListing: FunctionComponent = () => {
+const AuthorPage: FunctionComponent = () => {
   return (
-    <BlogListingRoot>
-      <Content5>
-        <Header>
-          <ONavbar>
-            <LogoParent>
-              <LogoIcon alt="" src="/logo.svg" />
-              <MenuParent>
-                <Menu>
-                  <Item>
-                    <Home>Home</Home>
-                  </Item>
-                  <Item>
-                    <Home>Blog</Home>
-                  </Item>
-                  <Item>
-                    <Home>Single Post</Home>
-                  </Item>
-                  <Item>
-                    <Home>Pages</Home>
-                  </Item>
-                  <Item>
-                    <Home>Contact</Home>
-                  </Item>
-                </Menu>
-                <AtomsInputParent>
-                  <AtomsInput>
-                    <Placeholder>Search</Placeholder>
-                    <SearchOutlineIcon alt="" src="/searchoutline.svg" />
-                  </AtomsInput>
-                  <Swich>
-                    <SwichChild />
-                    <SunnyWrapper>
-                      <SunnyIcon alt="" src="/sunny.svg" />
-                    </SunnyWrapper>
-                  </Swich>
-                </AtomsInputParent>
-              </MenuParent>
-            </LogoParent>
-          </ONavbar>
-          <OPageInfo>
-            <Content>
-              <PageTitle>Page TItle</PageTitle>
-              <ABreadcrumb>
-                <Home1>Home</Home1>
-                <LinkOne>
-                  <Divider />
-                  <Home>Link One</Home>
-                </LinkOne>
-                <LinkTwo>
-                  <Divider />
-                  <Home>Link Two</Home>
-                </LinkTwo>
-                <LinkTwo>
-                  <Divider />
-                  <Home>Link Three</Home>
-                </LinkTwo>
-              </ABreadcrumb>
-            </Content>
-          </OPageInfo>
-        </Header>
-        <MPostCardOverlay>
-          <Content1>
-            <Heading>
-              <ABadge>
-                <Text1>Technology</Text1>
-              </ABadge>
-              <Title>
-                The Impact of Technology on the Workplace: How Technology is
-                Changing
-              </Title>
-            </Heading>
-            <ShortInfo>
-              <LinkOne>
-                <ImageIcon alt="" src="/image@2x.png" />
-                <Author>Tracey Wilson</Author>
-              </LinkOne>
-              <Home>August 20, 2022</Home>
-            </ShortInfo>
-          </Content1>
-        </MPostCardOverlay>
-        <Content4>
+    <AuthorPageRoot>
+      <Content4>
+        <Content3>
+          <Header>
+            <ONavbar>
+              <LogoParent>
+                <LogoIcon alt="" src="/logo.svg" />
+                <MenuParent>
+                  <Menu>
+                    <Item>
+                      <Home>Home</Home>
+                    </Item>
+                    <Item>
+                      <Home>Blog</Home>
+                    </Item>
+                    <Item>
+                      <Home>Single Post</Home>
+                    </Item>
+                    <Item>
+                      <Home>Pages</Home>
+                    </Item>
+                    <Item>
+                      <Home>Contact</Home>
+                    </Item>
+                  </Menu>
+                  <AtomsInputParent>
+                    <AtomsInput>
+                      <Placeholder>Search</Placeholder>
+                      <SearchOutlineIcon alt="" src="/searchoutline.svg" />
+                    </AtomsInput>
+                    <Swich>
+                      <SwichChild />
+                      <SunnyWrapper>
+                        <SunnyIcon alt="" src="/sunny.svg" />
+                      </SunnyWrapper>
+                    </Swich>
+                  </AtomsInputParent>
+                </MenuParent>
+              </LogoParent>
+            </ONavbar>
+            <OAuthorInfo>
+              <Content>
+                <AAuthor>
+                  <ImageIcon alt="" src="/image@2x.png" />
+                  <Info>
+                    <JonathanDoe>Jonathan Doe</JonathanDoe>
+                    <CollaboratorEditor>{`Collaborator & Editor`}</CollaboratorEditor>
+                  </Info>
+                </AAuthor>
+                <Para>
+                  Meet Jonathan Doe, a passionate writer and blogger with a love
+                  for technology and travel. Jonathan holds a degree in Computer
+                  Science and has spent years working in the tech industry,
+                  gaining a deep understanding of the impact technology has on
+                  our lives.
+                </Para>
+                <SocialMedia>
+                  <AButton>
+                    <SearchOutlineIcon alt="" src="/logofacebook.svg" />
+                  </AButton>
+                  <AButton>
+                    <SearchOutlineIcon alt="" src="/logotwitter.svg" />
+                  </AButton>
+                  <AButton>
+                    <SearchOutlineIcon alt="" src="/logoinstagram.svg" />
+                  </AButton>
+                  <AButton>
+                    <SearchOutlineIcon alt="" src="/logoyoutube.svg" />
+                  </AButton>
+                </SocialMedia>
+              </Content>
+            </OAuthorInfo>
+          </Header>
           <OPostLayout>
-            <Content3>
+            <Heading>
+              <Title>Latest Post</Title>
+            </Heading>
+            <Content2>
               <Row>
                 <MPostCardGrid>
                   <MPostCardGridChild alt="" src="/rectangle-38@2x.png" />
-                  <Content2>
-                    <Heading>
-                      <ABadge1>
+                  <Content1>
+                    <Heading1>
+                      <ABadge>
                         <Text1>Technology</Text1>
-                      </ABadge1>
+                      </ABadge>
                       <Title1>
                         The Impact of Technology on the Workplace: How
                         Technology is Changing
                       </Title1>
-                    </Heading>
-                    <ShortInfo1>
-                      <LinkOne>
-                        <ImageIcon alt="" src="/image@2x.png" />
+                    </Heading1>
+                    <ShortInfo>
+                      <AAuthor1>
+                        <ImageIcon1 alt="" src="/image@2x.png" />
                         <Author>Tracey Wilson</Author>
-                      </LinkOne>
+                      </AAuthor1>
                       <Home>August 20, 2022</Home>
-                    </ShortInfo1>
-                  </Content2>
+                    </ShortInfo>
+                  </Content1>
                 </MPostCardGrid>
                 <MPostCardGrid>
                   <MPostCardGridChild alt="" src="/rectangle-38@2x.png" />
-                  <Content2>
-                    <Heading>
-                      <ABadge1>
+                  <Content1>
+                    <Heading1>
+                      <ABadge>
                         <Text1>Technology</Text1>
-                      </ABadge1>
+                      </ABadge>
                       <Title1>
                         The Impact of Technology on the Workplace: How
                         Technology is Changing
                       </Title1>
-                    </Heading>
-                    <ShortInfo1>
-                      <LinkOne>
-                        <ImageIcon alt="" src="/image@2x.png" />
+                    </Heading1>
+                    <ShortInfo>
+                      <AAuthor1>
+                        <ImageIcon1 alt="" src="/image@2x.png" />
                         <Author>Jason Francisco</Author>
-                      </LinkOne>
+                      </AAuthor1>
                       <Home>August 20, 2022</Home>
-                    </ShortInfo1>
-                  </Content2>
+                    </ShortInfo>
+                  </Content1>
                 </MPostCardGrid>
                 <MPostCardGrid>
                   <MPostCardGridChild alt="" src="/rectangle-38@2x.png" />
-                  <Content2>
-                    <Heading>
-                      <ABadge1>
+                  <Content1>
+                    <Heading1>
+                      <ABadge>
                         <Text1>Technology</Text1>
-                      </ABadge1>
+                      </ABadge>
                       <Title1>
                         The Impact of Technology on the Workplace: How
                         Technology is Changing
                       </Title1>
-                    </Heading>
-                    <ShortInfo1>
-                      <LinkOne>
-                        <ImageIcon alt="" src="/image@2x.png" />
+                    </Heading1>
+                    <ShortInfo>
+                      <AAuthor1>
+                        <ImageIcon1 alt="" src="/image@2x.png" />
                         <Author>Elizabeth Slavin</Author>
-                      </LinkOne>
+                      </AAuthor1>
                       <Home>August 20, 2022</Home>
-                    </ShortInfo1>
-                  </Content2>
+                    </ShortInfo>
+                  </Content1>
                 </MPostCardGrid>
               </Row>
               <Row>
                 <MPostCardGrid>
                   <MPostCardGridChild alt="" src="/rectangle-38@2x.png" />
-                  <Content2>
-                    <Heading>
-                      <ABadge1>
+                  <Content1>
+                    <Heading1>
+                      <ABadge>
                         <Text1>Technology</Text1>
-                      </ABadge1>
+                      </ABadge>
                       <Title1>
                         The Impact of Technology on the Workplace: How
                         Technology is Changing
                       </Title1>
-                    </Heading>
-                    <ShortInfo1>
-                      <LinkOne>
-                        <ImageIcon alt="" src="/image@2x.png" />
+                    </Heading1>
+                    <ShortInfo>
+                      <AAuthor1>
+                        <ImageIcon1 alt="" src="/image@2x.png" />
                         <Author>Ernie Smith</Author>
-                      </LinkOne>
+                      </AAuthor1>
                       <Home>August 20, 2022</Home>
-                    </ShortInfo1>
-                  </Content2>
+                    </ShortInfo>
+                  </Content1>
                 </MPostCardGrid>
                 <MPostCardGrid>
                   <MPostCardGridChild alt="" src="/rectangle-38@2x.png" />
-                  <Content2>
-                    <Heading>
-                      <ABadge1>
+                  <Content1>
+                    <Heading1>
+                      <ABadge>
                         <Text1>Technology</Text1>
-                      </ABadge1>
+                      </ABadge>
                       <Title1>
                         The Impact of Technology on the Workplace: How
                         Technology is Changing
                       </Title1>
-                    </Heading>
-                    <ShortInfo1>
-                      <LinkOne>
-                        <ImageIcon alt="" src="/image@2x.png" />
+                    </Heading1>
+                    <ShortInfo>
+                      <AAuthor1>
+                        <ImageIcon1 alt="" src="/image@2x.png" />
                         <Author>Eric Smith</Author>
-                      </LinkOne>
+                      </AAuthor1>
                       <Home>August 20, 2022</Home>
-                    </ShortInfo1>
-                  </Content2>
+                    </ShortInfo>
+                  </Content1>
                 </MPostCardGrid>
                 <MPostCardGrid>
                   <MPostCardGridChild alt="" src="/rectangle-38@2x.png" />
-                  <Content2>
-                    <Heading>
-                      <ABadge1>
+                  <Content1>
+                    <Heading1>
+                      <ABadge>
                         <Text1>Technology</Text1>
-                      </ABadge1>
+                      </ABadge>
                       <Title1>
                         The Impact of Technology on the Workplace: How
                         Technology is Changing
                       </Title1>
-                    </Heading>
-                    <ShortInfo1>
-                      <LinkOne>
-                        <ImageIcon alt="" src="/image@2x.png" />
+                    </Heading1>
+                    <ShortInfo>
+                      <AAuthor1>
+                        <ImageIcon1 alt="" src="/image@2x.png" />
                         <Author>Tracey Wilson</Author>
-                      </LinkOne>
+                      </AAuthor1>
                       <Home>August 20, 2022</Home>
-                    </ShortInfo1>
-                  </Content2>
+                    </ShortInfo>
+                  </Content1>
                 </MPostCardGrid>
               </Row>
               <Row>
                 <MPostCardGrid>
                   <MPostCardGridChild alt="" src="/rectangle-38@2x.png" />
-                  <Content2>
-                    <Heading>
-                      <ABadge1>
+                  <Content1>
+                    <Heading1>
+                      <ABadge>
                         <Text1>Technology</Text1>
-                      </ABadge1>
+                      </ABadge>
                       <Title1>
                         The Impact of Technology on the Workplace: How
                         Technology is Changing
                       </Title1>
-                    </Heading>
-                    <ShortInfo1>
-                      <LinkOne>
-                        <ImageIcon alt="" src="/image@2x.png" />
+                    </Heading1>
+                    <ShortInfo>
+                      <AAuthor1>
+                        <ImageIcon1 alt="" src="/image@2x.png" />
                         <Author>Jason Francisco</Author>
-                      </LinkOne>
+                      </AAuthor1>
                       <Home>August 20, 2022</Home>
-                    </ShortInfo1>
-                  </Content2>
+                    </ShortInfo>
+                  </Content1>
                 </MPostCardGrid>
                 <MPostCardGrid>
                   <MPostCardGridChild alt="" src="/rectangle-38@2x.png" />
-                  <Content2>
-                    <Heading>
-                      <ABadge1>
+                  <Content1>
+                    <Heading1>
+                      <ABadge>
                         <Text1>Technology</Text1>
-                      </ABadge1>
+                      </ABadge>
                       <Title1>
                         The Impact of Technology on the Workplace: How
                         Technology is Changing
                       </Title1>
-                    </Heading>
-                    <ShortInfo1>
-                      <LinkOne>
-                        <ImageIcon alt="" src="/image@2x.png" />
+                    </Heading1>
+                    <ShortInfo>
+                      <AAuthor1>
+                        <ImageIcon1 alt="" src="/image@2x.png" />
                         <Author>Elizabeth Slavin</Author>
-                      </LinkOne>
+                      </AAuthor1>
                       <Home>August 20, 2022</Home>
-                    </ShortInfo1>
-                  </Content2>
+                    </ShortInfo>
+                  </Content1>
                 </MPostCardGrid>
                 <MPostCardGrid>
                   <MPostCardGridChild alt="" src="/rectangle-38@2x.png" />
-                  <Content2>
-                    <Heading>
-                      <ABadge1>
+                  <Content1>
+                    <Heading1>
+                      <ABadge>
                         <Text1>Technology</Text1>
-                      </ABadge1>
+                      </ABadge>
                       <Title1>
                         The Impact of Technology on the Workplace: How
                         Technology is Changing
                       </Title1>
-                    </Heading>
-                    <ShortInfo1>
-                      <LinkOne>
-                        <ImageIcon alt="" src="/image@2x.png" />
+                    </Heading1>
+                    <ShortInfo>
+                      <AAuthor1>
+                        <ImageIcon1 alt="" src="/image@2x.png" />
                         <Author>Ernie Smith</Author>
-                      </LinkOne>
+                      </AAuthor1>
                       <Home>August 20, 2022</Home>
-                    </ShortInfo1>
-                  </Content2>
+                    </ShortInfo>
+                  </Content1>
                 </MPostCardGrid>
               </Row>
-            </Content3>
-            <AButton>
-              <AddIcon alt="" src="/add.svg" />
-              <Author>Load More</Author>
-              <AddIcon alt="" src="/add.svg" />
-            </AButton>
+            </Content2>
           </OPostLayout>
-          <OAdsSpace>
-            <Info>
-              <Advertisement>Advertisement</Advertisement>
-              <YouCanPlace>You can place ads</YouCanPlace>
-              <X>750x100</X>
-            </Info>
-          </OAdsSpace>
-          <OFooter>
-            <Row>
-              <Info1>
-                <About1>
-                  <About>About</About>
-                  <Desciption>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam
-                  </Desciption>
-                </About1>
-                <Contact>
-                  <Home>
-                    <Email>{`Email : `}</Email>
-                    <Infojstemplatenet>info@jstemplate.net</Infojstemplatenet>
-                  </Home>
-                  <Home>
-                    <Email>{`Phone : `}</Email>
-                    <Infojstemplatenet>880 123 456 789</Infojstemplatenet>
-                  </Home>
-                </Contact>
-              </Info1>
-              <Link>
-                <QuickLink>
-                  <About>Quick Link</About>
-                  <LinkList>
-                    <Home>Home</Home>
-                    <Home>About</Home>
-                    <Home>Blog</Home>
-                    <Home>Archived</Home>
-                    <Home>Author</Home>
-                    <Home>Contact</Home>
-                  </LinkList>
-                </QuickLink>
-                <QuickLink>
-                  <About>Category</About>
-                  <LinkList>
-                    <Home>Lifestyle</Home>
-                    <Home>Technology</Home>
-                    <Home>Travel</Home>
-                    <Home>Business</Home>
-                    <Home>Economy</Home>
-                    <Home>Sports</Home>
-                  </LinkList>
-                </QuickLink>
-              </Link>
-              <MNewsletter>
-                <Content>
-                  <WeeklyNewsletter>Weekly Newsletter</WeeklyNewsletter>
-                  <GetBlogArticles>
-                    Get blog articles and offers via email
-                  </GetBlogArticles>
-                </Content>
-                <Form>
-                  <AInput>
-                    <Label>Label</Label>
-                    <Input>
-                      <AddIcon alt="" src="/mail.svg" />
-                      <Placeholder1>Your Email</Placeholder1>
-                      <MailIcon alt="" src="/mail.svg" />
-                    </Input>
-                    <Caption>This is a caption text for hint.</Caption>
-                  </AInput>
-                  <AButton1>
-                    <AddIcon alt="" src="/add.svg" />
-                    <Author>Subscribe</Author>
-                    <AddIcon alt="" src="/add.svg" />
-                  </AButton1>
-                </Form>
-              </MNewsletter>
-            </Row>
-            <Copyright>
-              <CopyrightInfo>
-                <LogoIcon1 alt="" src="/logo.svg" />
-                <Text2>
-                  <Metablog>
-                    <Meta>Meta</Meta>
-                    <Blog>Blog</Blog>
-                  </Metablog>
-                  <JsTemplate2023Container>
-                    <Meta>{`© `}</Meta>
-                    <JsTemplate>JS Template</JsTemplate>
-                    <Meta> 2023. All Rights Reserved.</Meta>
-                  </JsTemplate2023Container>
-                </Text2>
-              </CopyrightInfo>
-              <Link1>
-                <Home>Terms of Use</Home>
-                <Divider1 />
-                <Home>Privacy Policy</Home>
-                <Divider1 />
-                <Home>Cookie Policy</Home>
-              </Link1>
-            </Copyright>
-          </OFooter>
-        </Content4>
-      </Content5>
-    </BlogListingRoot>
+        </Content3>
+        <OFooter>
+          <Row>
+            <Info1>
+              <About1>
+                <About>About</About>
+                <Desciption>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam
+                </Desciption>
+              </About1>
+              <Contact>
+                <Home>
+                  <Email>{`Email : `}</Email>
+                  <Infojstemplatenet>info@jstemplate.net</Infojstemplatenet>
+                </Home>
+                <Home>
+                  <Email>{`Phone : `}</Email>
+                  <Infojstemplatenet>880 123 456 789</Infojstemplatenet>
+                </Home>
+              </Contact>
+            </Info1>
+            <Link>
+              <QuickLink>
+                <About>Quick Link</About>
+                <LinkList>
+                  <Home>Home</Home>
+                  <Home>About</Home>
+                  <Home>Blog</Home>
+                  <Home>Archived</Home>
+                  <Home>Author</Home>
+                  <Home>Contact</Home>
+                </LinkList>
+              </QuickLink>
+              <QuickLink>
+                <About>Category</About>
+                <LinkList>
+                  <Home>Lifestyle</Home>
+                  <Home>Technology</Home>
+                  <Home>Travel</Home>
+                  <Home>Business</Home>
+                  <Home>Economy</Home>
+                  <Home>Sports</Home>
+                </LinkList>
+              </QuickLink>
+            </Link>
+            <MNewsletter>
+              <Heading2>
+                <WeeklyNewsletter>Weekly Newsletter</WeeklyNewsletter>
+                <GetBlogArticles>
+                  Get blog articles and offers via email
+                </GetBlogArticles>
+              </Heading2>
+              <Form>
+                <AInput>
+                  <Label>Label</Label>
+                  <Input>
+                    <MailIcon alt="" src="/mail.svg" />
+                    <Placeholder1>Your Email</Placeholder1>
+                    <MailIcon1 alt="" src="/mail.svg" />
+                  </Input>
+                  <Caption>This is a caption text for hint.</Caption>
+                </AInput>
+                <AButton1>
+                  <MailIcon alt="" src="/add.svg" />
+                  <Author>Subscribe</Author>
+                  <MailIcon alt="" src="/add.svg" />
+                </AButton1>
+              </Form>
+            </MNewsletter>
+          </Row>
+          <Copyright>
+            <CopyrightInfo>
+              <LogoIcon1 alt="" src="/logo.svg" />
+              <Text2>
+                <Metablog>
+                  <Meta>Meta</Meta>
+                  <Blog>Blog</Blog>
+                </Metablog>
+                <JsTemplate2023Container>
+                  <Meta>{`© `}</Meta>
+                  <JsTemplate>JS Template</JsTemplate>
+                  <Meta> 2023. All Rights Reserved.</Meta>
+                </JsTemplate2023Container>
+              </Text2>
+            </CopyrightInfo>
+            <Link1>
+              <Home>Terms of Use</Home>
+              <Divider />
+              <Home>Privacy Policy</Home>
+              <Divider />
+              <Home>Cookie Policy</Home>
+            </Link1>
+          </Copyright>
+        </OFooter>
+      </Content4>
+    </AuthorPageRoot>
   );
 };
 
-export default BlogListing;
+export default AuthorPage;

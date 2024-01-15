@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
-import Home from "../Home/Home";
-import Logo from "../../../assets/svg/logo.svg";
-import SearchOutline from "../../../assets/svg/searchoutline.svg";
-import Sunny from "../../../assets/svg/sunny.svg";
+import Home from "./Home";
+import Logo from "../../assets/svg/logo.svg";
+import SearchOutline from "../../assets/svg/searchoutline.svg";
+import Sunny from "../../assets/svg/sunny.svg";
 const Navigation = () => {
   const ONavbar = styled.div`
     display: flex;

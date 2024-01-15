@@ -5,11 +5,12 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import "./App.css";
-import HomePage from "./components/Homepage/HomePage";
+import AuthorPage from "./components/Author/Author";
 import BlogListing from "./components/BlogListing/BlogListing";
-import Navigation from "./components/shared/Navigation/Navigation";
-import Footer from "./components/shared/Footer/Footer";
+import HomePage from "./components/Homepage/HomePage";
+import SinglePost from "./components/SinglePost/SinglePost";
+// import Navigation from "./components/shared/Navigation";
+// import Footer from "./components/shared/Footer";
 function App() {
   const action = useNavigationType();
   const location = useLocation();
@@ -47,12 +48,14 @@ function App() {
   }, [pathname]);
   return (
     <>
-      <Navigation />
+      {/* <Navigation /> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/blog-listing" element={<BlogListing />} />
+        <Route path="/post/:postId" element={<SinglePost />} />
+        <Route path="/author/:authorId" element={<AuthorPage />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
