@@ -1,4 +1,3 @@
-import "./Footer.css";
 import Logo from "../../../assets/svg/logo.svg";
 import Mail from "../../../assets/svg/mail.svg";
 const Footer = () => {
